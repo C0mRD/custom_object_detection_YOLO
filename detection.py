@@ -3,7 +3,8 @@ import cv2
 import time
 from torch.multiprocessing import Pool, Process, set_start_method
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5/runs/train/Model3/weights/best.pt', force_reload=True)
+trained_model_path = 'weights/best.pt' #'yolov5/runs/train/Model3/weights/best.pt'
+model = torch.hub.load('ultralytics/yolov5', 'custom', path=trained_model_path, force_reload=True)
 
 def detectObject(video,name):
     cap = cv2.VideoCapture(video)
