@@ -7,3 +7,6 @@ Download dataset.zip file from above link , extract and add it to the same folde
 To test the model on two test videos run detection.py file.
 ``` python3 detection.py ```
 
+Sample Output frame :
+![Sample Output frame](screenshot.jpg)
+
