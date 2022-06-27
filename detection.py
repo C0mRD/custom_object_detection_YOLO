@@ -3,7 +3,7 @@ import cv2
 import time
 from torch.multiprocessing import Pool, Process, set_start_method
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='runs/train/Model3/weights/best.pt', force_reload=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='yolov5/runs/train/Model3/weights/best.pt', force_reload=True)
 
 def detectObject(video,name):
     cap = cv2.VideoCapture(video)
@@ -47,7 +47,7 @@ if __name__ == '__main__':
         set_start_method('spawn', force=True)
     except RuntimeError:
         pass
-    Videos = ['../Dataset/Test1.mp4', '../Dataset/Test2.mp4']
+    Videos = ['Dataset/Test1.mp4', 'Dataset/Test2.mp4']
     for i in Videos:
         process = Process(target=detectObject, args=(i, str(i)))
         process.start()
